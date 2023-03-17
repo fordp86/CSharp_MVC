@@ -14,13 +14,21 @@
                 Speed += 5;
             }
         }
-        public void Deccelerate()
+        public void Decelerate()
         {
             if (Speed >= 5)
             {
                 Speed -= 5;
             }
             else
+            {
+                Speed = 0;
+            }
+        }
+
+        public void Decelerate(bool power)
+        {
+            if (power == true)
             {
                 Speed = 0;
             }

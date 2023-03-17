@@ -14,14 +14,7 @@
             if(Speed <= 130)
             {
                 Speed += 5 + (int)(Speed * Boost);
-            }
-        }
-
-        public void Decelerate(bool power)
-        {
-            if(power == true)
-            {
-                Speed = 0;
+                FuelLevel -= 0.025M;
             }
         }
     }

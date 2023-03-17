@@ -42,6 +42,23 @@ namespace CSharp_MVC.Controllers
             return View(myCar);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult BMWInfo(BMW car, string move)
+        {
+            if (move == "Faster")
+            {
+               car.Accelerate();
+            }if(move == "Slower")
+            {
+                car.Decelerate();
+            }
+            if(move == "Power")
+            {
+                car.Decelerate(true);
+            }
+            return View(car);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
